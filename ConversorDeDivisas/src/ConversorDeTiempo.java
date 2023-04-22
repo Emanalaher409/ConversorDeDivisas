@@ -4,6 +4,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.event.ChangeEvent;
+import org.netbeans.lib.awtextra.AbsoluteConstraints;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
