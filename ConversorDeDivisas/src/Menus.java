@@ -94,6 +94,7 @@ public static int conversoresTiempo = 0;
         AbajoCMonedas = new jPanelGradientGRIS();
         jPanel2 = new JPanelGradientNaranja();
         jLabel1 = new javax.swing.JLabel();
+        BotonDeCierre = new javax.swing.JButton();
         TiempoJpanel = new JPanelGradientGris();
         Reloj = new javax.swing.JLabel();
 
@@ -101,6 +102,7 @@ public static int conversoresTiempo = 0;
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setUndecorated(true);
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
@@ -126,7 +128,7 @@ public static int conversoresTiempo = 0;
                 jComboBox1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 153, -1));
+        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 170, -1));
 
         jButton2.setBackground(new java.awt.Color(186, 249, 195));
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -137,7 +139,12 @@ public static int conversoresTiempo = 0;
                 jButton2MouseClicked(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 90, 40));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 90, 40));
 
         ArribaCMonedas.setBackground(new java.awt.Color(255, 255, 51));
         ArribaCMonedas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -170,19 +177,37 @@ public static int conversoresTiempo = 0;
         jLabel1.setForeground(new java.awt.Color(255, 51, 51));
         jLabel1.setText("SELECCIONE UNA OPCIÓN");
 
+        BotonDeCierre.setBackground(new java.awt.Color(255, 51, 51));
+        BotonDeCierre.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        BotonDeCierre.setForeground(new java.awt.Color(0, 0, 0));
+        BotonDeCierre.setText("X");
+        BotonDeCierre.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotonDeCierreMouseClicked(evt);
+            }
+        });
+        BotonDeCierre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonDeCierreActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(29, 29, 29)
+                .addGap(30, 30, 30)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(115, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addComponent(BotonDeCierre, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(BotonDeCierre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -264,12 +289,24 @@ public static int conversoresTiempo = 0;
     }//GEN-LAST:event_jComboBox1ItemStateChanged
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-       int option = JOptionPane.showOptionDialog(this, "¿Está seguro de que desea cerrar la aplicación?", "Confirmar cierre", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, new Object[]{"Sí", "No"}, "Sí");
+
+
+    }//GEN-LAST:event_formWindowClosing
+
+    private void BotonDeCierreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonDeCierreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotonDeCierreActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void BotonDeCierreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonDeCierreMouseClicked
+               int option = JOptionPane.showOptionDialog(this, "¿Está seguro de que desea cerrar la aplicación?", "Confirmar cierre", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, new Object[]{"Sí", "No"}, "Sí");
 if (option == JOptionPane.YES_OPTION) {
     System.exit(0);
 }
-
-    }//GEN-LAST:event_formWindowClosing
+    }//GEN-LAST:event_BotonDeCierreMouseClicked
     // public static void Conversores(JCombobox Conversores){
 
     //  }
@@ -311,6 +348,7 @@ if (option == JOptionPane.YES_OPTION) {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel AbajoCMonedas;
     private javax.swing.JPanel ArribaCMonedas;
+    private javax.swing.JButton BotonDeCierre;
     private javax.swing.JLabel Reloj;
     private javax.swing.JPanel TiempoJpanel;
     private javax.swing.JButton jButton2;
